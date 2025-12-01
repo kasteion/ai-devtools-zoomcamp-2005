@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block title %}Delete Todo - Todo App{% endblock %}
+{% block content %}
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card border-danger">
+      <div class="card-header bg-danger text-white">
+        <h4 class="mb-0">
+          <i class="bi bi-exclamation-triangle"></i> Confirm Delete
+        </h4>
+      </div>
+      <div class="card-body">
+        <p>Are you sure you want to delete the following todo?</p>
+        <div class="alert alert-warning">
+          <strong>Title:</strong> {{ object.title }}<br />
+          {% if object.description %}
+          <strong>Description:</strong> {{ object.description }}<br />
+          {% endif %}
+          <strong>Status:</strong> {% if object.completed %}Completed{% else
+          %}Pending{% endif %}<br />
+          <strong>Created:</strong> {{ object.created_at|date:"M d, Y H:i" }}
+        </div>
+        <form method="post">
+          {% csrf_token %}
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-danger">
+              <i class="bi bi-trash"></i> Yes, Delete
+            </button>
+            <a href="{% url 'home' %}" class="btn btn-secondary">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
