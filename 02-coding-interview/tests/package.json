@@ -1,0 +1,22 @@
+{
+  "name": "coding-interview-tests",
+  "version": "1.0.0",
+  "description": "Integration tests for coding interview platform",
+  "type": "module",
+  "scripts": {
+    "test": "node integration/session.test.js",
+    "test:watch": "nodemon integration/session.test.js"
+  },
+  "keywords": [
+    "test",
+    "integration"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "socket.io-client": "^4.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

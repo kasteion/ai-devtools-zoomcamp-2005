@@ -90,21 +90,44 @@ git clone <repository-url>
 cd coding-interview-app
 ```
 
-2. **Set up the backend**
+2. **Install all dependencies**
 
 ```bash
-cd backend
-npm install
+npm run install:all
 ```
 
-3. **Set up the frontend**
+This will install dependencies for the root project, backend, frontend, and tests.
+
+**Or install manually:**
 
 ```bash
-cd ../frontend
+# Root dependencies (concurrently)
 npm install
+
+# Backend dependencies
+cd backend && npm install
+
+# Frontend dependencies
+cd ../frontend && npm install
+
+# Test dependencies
+cd ../tests && npm install
 ```
 
 ### Running the Application
+
+**Option 1: Run everything with one command (Recommended) 🚀**
+
+```bash
+npm run dev
+```
+
+This will start both backend and frontend servers concurrently using a single command!
+
+- Backend will run on `http://localhost:3001`
+- Frontend will run on `http://localhost:5173`
+
+**Option 2: Run servers separately**
 
 1. **Start the backend server**
 
@@ -254,6 +277,25 @@ For detailed architecture information, see [ARCHITECTURE.md](./ARCHITECTURE.md).
 ## Development
 
 ### Running Tests
+
+**Integration Tests (Recommended):**
+
+```bash
+# Run integration tests
+npm test
+```
+
+This will run comprehensive integration tests that verify:
+
+- Session creation
+- WebSocket connections
+- Real-time code synchronization
+- Multi-user scenarios
+- Language switching
+
+See [`tests/README.md`](tests/README.md) for detailed test documentation.
+
+**Individual Tests:**
 
 ```bash
 # Backend tests
