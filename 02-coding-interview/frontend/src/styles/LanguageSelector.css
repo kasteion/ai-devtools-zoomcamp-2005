@@ -1,0 +1,36 @@
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.language-selector label {
+  font-size: 0.875rem;
+  color: #d4d4d4;
+  font-weight: 500;
+}
+
+.language-select {
+  padding: 0.5rem 1rem;
+  background-color: #3e3e42;
+  color: #d4d4d4;
+  border: 1px solid #555;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.language-select:hover:not(:disabled) {
+  border-color: #007acc;
+}
+
+.language-select:focus {
+  outline: none;
+  border-color: #007acc;
+}
+
+.language-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
