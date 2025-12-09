@@ -2,7 +2,30 @@
 
 Get the coding interview platform running in under 2 minutes!
 
-## Prerequisites
+## Choose Your Setup Method
+
+### Option 1: Docker (Easiest) 🐳
+
+**Prerequisites:**
+
+- Docker and Docker Compose installed
+
+**Steps:**
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd coding-interview-app
+
+# Build and run with Docker
+docker-compose up -d
+```
+
+That's it! Access at **http://localhost:3001** 🎉
+
+### Option 2: Local Development
+
+**Prerequisites:**
 
 - Node.js 18+ installed
 - npm package manager

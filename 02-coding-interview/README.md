@@ -339,40 +339,56 @@ npm run format
 
 ## Deployment
 
-### Backend Deployment
+### Docker Deployment (Recommended) 🐳
 
-**Recommended platforms:**
-
-- Railway.app
-- Heroku
-- AWS EC2/ECS
-- DigitalOcean
-
-**Environment variables to set:**
-
-- `PORT` - Server port
-- `NODE_ENV` - Environment (production)
-- `CORS_ORIGIN` - Frontend URL
-
-### Frontend Deployment
-
-**Recommended platforms:**
-
-- Vercel (easiest)
-- Netlify
-- AWS S3 + CloudFront
-
-**Build command:** `npm run build`
-**Output directory:** `dist`
-
-### Docker Deployment
+The easiest way to deploy is using Docker:
 
 ```bash
 # Build and run with Docker Compose
 docker-compose up -d
 ```
 
-See [IMPLEMENTATION_GUIDE.md](./IMPLEMENTATION_GUIDE.md) for detailed deployment instructions.
+Access the application at: **http://localhost:3001**
+
+**Docker Features:**
+
+- ✅ Single container with both frontend and backend
+- ✅ Multi-stage build for optimized image size
+- ✅ Production-ready configuration
+- ✅ Health checks included
+- ✅ Easy scaling and deployment
+
+See [`DOCKER_GUIDE.md`](./DOCKER_GUIDE.md) for comprehensive Docker documentation.
+
+### Cloud Deployment
+
+**Recommended platforms:**
+
+- **Railway.app** - Easiest deployment from GitHub
+- **AWS ECS** - Enterprise-grade container orchestration
+- **Google Cloud Run** - Serverless container platform
+- **DigitalOcean App Platform** - Simple container deployment
+- **Heroku** - Traditional PaaS deployment
+
+### Manual Deployment
+
+**Backend:**
+
+```bash
+cd backend
+npm install --only=production
+NODE_ENV=production node src/server.js
+```
+
+**Frontend:**
+
+```bash
+cd frontend
+npm run build
+# Deploy dist/ folder to CDN or static hosting
+```
+
+See [`IMPLEMENTATION_GUIDE.md`](./IMPLEMENTATION_GUIDE.md) for detailed deployment instructions.
 
 ## Security
 
