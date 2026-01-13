@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "local": {
+      "command": "sh",
+      "args": [
+        "uv",
+        "--directory",
+        "~/repos/kasteion/ai-devtools-zoomcamp-2005/03-mcp",
+        "run",
+        "main.py"
+      ],
+      "env": {},
+      "disabled": false,
+      "alwaysAllow": []
+    }
+  }
+}
